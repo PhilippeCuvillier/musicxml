@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description xmlns:x="http://www.jenitennison.com/xslt/xspec" stylesheet="../generateIdMusicXmlPartwise.xsl">
+   <x:scenario label="Simplest MusicXML 3.1 file (without id)">
+      <x:context href="simple_musicxml31.xml"/>
+      <x:expect label="All elements with 'id' attribute in DTD have an 'id' attribute" 
+         test="count((bookmark|instrument|midi-instrument|part|play|score-instrument|score-part|clef|key|measure-style|time|transpose|barline|coda|dynamics|fermata|segno|direction|direction-type|rehearsal|words|wedge|dashes|bracket|pedal|metronome|octave-shift|harp-pedals|damp|damp-all|eyeglasses|string-mute|scordatura|image|principal-voice|accordion-registration|percussion|other-direction |harmony|frame|grouping|print|sound|note|beam|notations|tied|slur|tuplet|glissando|slide|other-notation|ornaments|accidental-mark|technical|articulations|arpeggiate|non-arpeggiate|lyric|figured-bass|credit|credit-image|credit-words|measure)[not(@oid)])=0"
+      />
+      <x:expect label="All other elements do NOT have 'id' attribute" 
+         test="count(//(* except (bookmark|instrument|midi-instrument|part|play|score-instrument|score-part|clef|key|measure-style|time|transpose|barline|coda|dynamics|fermata|segno|direction|direction-type|rehearsal|words|wedge|dashes|bracket|pedal|metronome|octave-shift|harp-pedals|damp|damp-all|eyeglasses|string-mute|scordatura|image|principal-voice|accordion-registration|percussion|other-direction |harmony|frame|grouping|print|sound|note|beam|notations|tied|slur|tuplet|glissando|slide|other-notation|ornaments|accidental-mark|technical|articulations|arpeggiate|non-arpeggiate|lyric|figured-bass|credit|credit-image|credit-words|measure))[@id])=0"
+      />
+      <x:expect label="ID  of score-part 1 is preserved" test="/score-partwise/part-list/score-part[1]/@id='P1'"/>
+      <x:expect label="ID  of part 1 is preserved" test="/score-partwise/part[1]/@id='P1'"/>
+   </x:scenario>
+   <x:scenario label="Simplest MusicXML 3.1 file (with id)">
+      <x:context
+         href="simple_musicxml31_with_id.xml"/>
+      <x:expect label="Output XML is identical" test="."
+         href="simple_musicxml31_with_id.xml"/>
+   </x:scenario>
+   <x:scenario label="Real-world score without id (Fauré, Gabriel - Clair de lune)">
+      <x:context href="Faur%C3%A9,%20Gabriel%20-%20Clair%20de%20lune.xml"/>
+      <x:expect label="All elements with 'id' attribute in DTD have an 'id' attribute" 
+         test="count((bookmark|instrument|midi-instrument|part|play|score-instrument|score-part|clef|key|measure-style|time|transpose|barline|coda|dynamics|fermata|segno|direction|direction-type|rehearsal|words|wedge|dashes|bracket|pedal|metronome|octave-shift|harp-pedals|damp|damp-all|eyeglasses|string-mute|scordatura|image|principal-voice|accordion-registration|percussion|other-direction |harmony|frame|grouping|print|sound|note|beam|notations|tied|slur|tuplet|glissando|slide|other-notation|ornaments|accidental-mark|technical|articulations|arpeggiate|non-arpeggiate|lyric|figured-bass|credit|credit-image|credit-words|measure)[not(@oid)])=0"
+      />
+      <x:expect label="All other elements do NOT have 'id' attribute" 
+         test="count(//(* except (bookmark|instrument|midi-instrument|part|play|score-instrument|score-part|clef|key|measure-style|time|transpose|barline|coda|dynamics|fermata|segno|direction|direction-type|rehearsal|words|wedge|dashes|bracket|pedal|metronome|octave-shift|harp-pedals|damp|damp-all|eyeglasses|string-mute|scordatura|image|principal-voice|accordion-registration|percussion|other-direction |harmony|frame|grouping|print|sound|note|beam|notations|tied|slur|tuplet|glissando|slide|other-notation|ornaments|accidental-mark|technical|articulations|arpeggiate|non-arpeggiate|lyric|figured-bass|credit|credit-image|credit-words|measure))[@id])=0"
+      />
+      <x:expect label="ID  of score-part 1 is preserved" test="/score-partwise/part-list/score-part[1]/@id='P1'"/>
+      <x:expect label="ID  of part 1 is preserved" test="/score-partwise/part[1]/@id='P1'"/>
+      <x:expect label="ID  of score-instrument 1 is preserved" test="/score-partwise/part-list/score-part[1]/score-instrument/@id='P1-I1'"/>
+      <x:expect label="ID  of midi-instrument 1 is preserved" test="/score-partwise/part-list/score-part[1]/midi-instrument/@id='P1-I1'"/>
+      <x:expect label="ID  of score-part 2 is preserved" test="//score-part[2]/@id='P2'"/>
+      <x:expect label="ID  of part 2 is preserved" test="//part[2]/@id='P2'"/>
+      <x:expect label="ID  of score-instrument 2 is preserved" test="//score-part[2]/score-instrument/@id='P2-I2'"/>
+      <x:expect label="ID  of midi-instrument 2 is preserved" test="//score-part[2]/midi-instrument/@id='P2-I2'"/>
+   </x:scenario>
+   <x:scenario label="Real-world score with id (Fauré, Gabriel - Clair de lune)">
+      <x:context
+         href="Faur%C3%A9,%20Gabriel%20-%20Clair%20de%20lune+generateId.xml"/>
+      <x:expect label="Output XML is identical" test="."
+         href="Faur%C3%A9,%20Gabriel%20-%20Clair%20de%20lune+generateId.xml"/>
+   </x:scenario>
+</x:description>
