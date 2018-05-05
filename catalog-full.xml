@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.1//EN" "http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- DTD -->
+    <group prefer="public" xml:base="http://www.musicxml.org/dtds/">   
+        <!-- SYSTEM -->
+        <system systemId="http://www.musicxml.org/dtds/container.dtd" uri="container.dtd"/>
+        <system systemId="http://www.musicxml.org/dtds/midixml.dtd" uri="midixml.dtd"/>
+        <system systemId="http://www.musicxml.org/dtds/opus.dtd" uri="opus.dtd"/>
+        <system systemId="http://www.musicxml.org/dtds/partwise.dtd" uri="partwise.dtd"/>
+        <system systemId="http://www.musicxml.org/dtds/sounds.dtd" uri="sounds.dtd"/>
+        <system systemId="http://www.musicxml.org/dtds/timewise.dtd" uri="timewise.dtd"/>
+        <!-- PUBLIC -->
+        <public publicId="-//Recordare//DTD MusicXML 3.1 Container//EN" uri="container.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 3.1 MIDI//EN" uri="midixml.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 3.1 Opus//EN" uri="opus.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 3.1 Partwise//EN" uri="partwise.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 3.1 Sounds//EN" uri="sounds.dtd"/>
+        <public publicId="-//Recordare//DTD MusicXML 3.1 Timewise//EN" uri="timewise.dtd"/>
+    </group>
+    <!-- W3C XML Schema -->
+    <group xml:base="http://www.musicxml.org/xsd/">    
+        <uri name="http://www.musicxml.org/xsd/xml.xsd" uri="xml.xsd"/>
+        <uri name="http://www.musicxml.org/xsd/xlink.xsd" uri="xlink.xsd"/>
+        <uri name="http://www.musicxml.org/xsd/musicxml.xsd" uri="musicxml.xsd"/>
+        <uri name="http://www.musicxml.org/xsd/opus.xsd" uri="opus.xsd"/>
+    </group>
+</catalog>
